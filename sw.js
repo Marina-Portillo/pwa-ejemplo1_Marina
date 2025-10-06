@@ -2,14 +2,15 @@
 //1. Nombgre del sw y los archivos a cachear
 
 const CACHE_NAME = "mi-cache";
+const BASE_PATH = "pwa-ejemplo1-Marina/";
 const urlsToCache = [
-    "index.htlm",
-    "manifest.json",
-    "style.css",
-    "app.js",
-    "offline.htlm",
-    "icons/icon-192x192.png",
-    "icons/icon-512x512.png",
+    `${BASE_PATH}index.htlm`,
+    `${BASE_PATH}manifest.json`,
+    `${BASE_PATH}style.css`,
+    `${BASE_PATH}app.js`,
+    `${BASE_PATH}offline.htlm`,
+    `${BASE_PATH}icons/icon-192x192.png`,
+    `${BASE_PATH}icons/icon-512x512.png`,
 ];
 
 //2. INSTALL -> se ejecuta al instalar el service worker
