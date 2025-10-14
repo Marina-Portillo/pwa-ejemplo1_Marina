@@ -1,45 +1,45 @@
 {
     "name": "Mi primera PWA",
     "short_name": "MiPWA",
-    "start_url": "pwa-ejemplo1_Marina/index.html",
-    "scope": "pwa-ejemplo1_Marina/",
+    "start_url": "/index.html",
+    "scope": "./",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2196f3",
     "orientation": "portrait",
     "icons": [
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-72X72.png",
+            "src": "icons/icon-72X72.png",
             "size": "72x72",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-96X96.png",
+            "src": "icons/icon-96X96.png",
             "size": "96x96",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-128X128.png",
+            "src": "icons/icon-128X128.png",
             "size": "128x128",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-192X192.png",
+            "src": "icons/icon-192X192.png",
             "size": "192x192",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-256X256.png",
+            "src": "icons/icon-256X256.png",
             "size": "256x256",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-384X384.png",
+            "src": "icons/icon-384X384.png",
             "size": "384x384",
             "type": "image/png"
         },
         {
-            "src": "pwa-ejemplo1_Marina/icons/icon-512X512.png",
+            "src": "icons/icon-512X512.png",
             "size": "512x512",
             "type": "image/png"
         }
