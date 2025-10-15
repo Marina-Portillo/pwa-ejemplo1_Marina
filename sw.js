@@ -2,7 +2,7 @@
 //1. Nombgre del sw y los archivos a cachear
 
 const CACHE_NAME = "mi-cache";
-const BASE_PATH = "pwa-ejemplo1-Marina/";
+const BASE_PATH = "/pwa-ejemplo1-Marina/";
 const urlsToCache = [
     `${BASE_PATH}index.htlm`,
     `${BASE_PATH}manifest.json`,
@@ -46,7 +46,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(event.request).then(response => {
-            return response || fetch(event.request).catch (() => caches.match("offline.html"))
+            return response || fetch(event.request).catch (() => caches.match(`${BASE_PATH}offline.html`));
         })
     )
 });
