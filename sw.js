@@ -4,13 +4,13 @@
 const CACHE_NAME = "mi-cache";
 const BASE_PATH = "/pwa-ejemplo1_Marina/";
 const urlsToCache = [
-    `${BASE_PATH}index.html`,
-    `${BASE_PATH}manifest.json`,
-    `${BASE_PATH}style.css`,
-    `${BASE_PATH}app.js`,
-    `${BASE_PATH}offline.html`,
-    `${BASE_PATH}icons/icon-192x192.png`,
-    `${BASE_PATH}icons/icon-512x512.png`,
+    `${BASE_PATH}/index.html`,
+    `${BASE_PATH}/manifest.json`,
+    `${BASE_PATH}/style.css`,
+    `${BASE_PATH}/app.js`,
+    `${BASE_PATH}/offline.html`,
+    `${BASE_PATH}/icons/icon-192x192.png`,
+    `${BASE_PATH}/icons/icon-512x512.png`,
 ];
 
 //2. INSTALL -> se ejecuta al instalar el service worker
