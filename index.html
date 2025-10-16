@@ -8,9 +8,7 @@
    <base href="/pwa-ejemplo1_Marina/">
 
    <!--Vincular el manifest -->
-   <link rel="manifest" href="/pwa-ejemplo1_Marina/manifest.json">
-   <link rel="icon" href="/pwa-ejemplo1_Marina/icons/icon-192x192.png">
-<link rel="apple-touch-icon" href="/pwa-ejemplo1_Marina/icons/icon-512x512.png">
+   <link rel="manifest" href="manifest.json">
 
 
    <!-- Color de la barra del navegador en mòviless-->
@@ -25,7 +23,7 @@
    <!-- Registrar el Service Worker-->
     <script>
         if ("serviceWorker" in navigator){
-            navigator.serviceWorker.register("/pwa-ejemplo1_Marina/sw.js")
+            navigator.serviceWorker.register('/pwa-ejemplo1_Marina/sw.js')
             .then(reg => console.log("Service Worker registrado"))
             .catch(err => console.log("Error al registrar el Service Worker"))
         }
