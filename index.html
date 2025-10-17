@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi primera PWA</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mi primera PWA</title>
 
-  <!-- Vincular el manifest -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme_color" content="#2196f3" />
+   <base href="/pwa-ejemplo1_Marina/">
+
+   <!--Vincular el manifest -->
+   <link rel="manifest" href="manifest.json">
+
+
+   <!-- Color de la barra del navegador en mòviless-->
+   <meta name="theme_color" content="#2196f3">
+
 </head>
 <body>
-  <h1>Bienvenido a mi PWA</h1>
-  <p>Se puede instalar como aplicación en tu celular</p>
-  <button onclick="alert('Hola desde la PWA')">Click aquí</button>
+   <h1>Bienvenido a mi PWA</h1>
+   <p>Se puede instalar como aplicaciòn en tu celular</p>
+   <button onclick="alert('Hola desde la PWA')"> Click aqui</button>
 
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="login.html">Inicia sesión</a></li>
-  </ul>
+   <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="login.html">Inicia sesiòn</a></li>
+   </ul>
 
-  <!-- Botón de instalación manual -->
-  <button id="installBtn" style="display: none;">Instalar aplicación</button>
-
-  <!-- Registrar el Service Worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("sw.js")
-        .then((reg) => console.log("Service Worker registrado"))
-        .catch((err) => console.log("Error al registrar el Service Worker", err));
-    }
-
-    // Lógica para capturar el evento de instalación
-    let deferredPrompt;
-    const installBtn = document.getElementById("installBtn");
-
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault(); // Evita el prompt automático
-      deferredPrompt = e;
-      installBtn.style.display = "inline-block";
-
-      installBtn.addEventListener("click", () => {
-        installBtn.style.display = "none";
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === "accepted") {
-            console.log("Usuario aceptó la instalación");
-          } else {
-            console.log("Usuario canceló la instalación");
-          }
-          deferredPrompt = null;
-        });
-      });
-    });
-  </script>
+   <!-- Registrar el Service Worker-->
+    <script>
+        if ("serviceWorker" in navigator){
+            navigator.serviceWorker.register('/pwa-ejemplo1_Marina/sw.js')
+            .then(reg => console.log("Service Worker registrado"))
+            .catch(err => console.log("Error al registrar el Service Worker"))
+        }
+    </script>
+   
 </body>
 </html>
