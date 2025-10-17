@@ -9,30 +9,54 @@
 
    <!--Vincular el manifest -->
    <link rel="manifest" href="manifest.json">
-
-
-   <!-- Color de la barra del navegador en mòviless-->
    <meta name="theme_color" content="#2196f3">
-
 </head>
 <body>
    <h1>Bienvenido a mi PWA</h1>
-   <p>Se puede instalar como aplicaciòn en tu celular</p>
-   <button onclick="alert('Hola desde la PWA')"> Click aqui</button>
+   <p>Se puede instalar como aplicación en tu celular</p>
+   <button onclick="alert('Hola desde la PWA')">Click aquí</button>
+
+   <!-- 🔽 Botón de instalación -->
+   <button id="installBtn" style="display: none;">Instalar aplicación</button>
 
    <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="login.html">Inicia sesiòn</a></li>
+        <li><a href="login.html">Inicia sesión</a></li>
    </ul>
 
-   <!-- Registrar el Service Worker-->
-    <script>
+   <!-- Registrar el Service Worker -->
+   <script>
         if ("serviceWorker" in navigator){
             navigator.serviceWorker.register('/pwa-ejemplo1_Marina/sw.js')
             .then(reg => console.log("Service Worker registrado"))
             .catch(err => console.log("Error al registrar el Service Worker"))
         }
-    </script>
-   
+   </script>
+
+   <!-- Script para el botón de instalación -->
+   <script>
+      let deferredPrompt;
+      const installBtn = document.getElementById("installBtn");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          console.log("📦 Evento beforeinstallprompt detectado");
+          installBtn.style.display = "inline-block";
+
+          installBtn.addEventListener("click", () => {
+              installBtn.style.display = "none";
+              deferredPrompt.prompt();
+              deferredPrompt.userChoice.then((choiceResult) => {
+                  if (choiceResult.outcome === 'accepted') {
+                      console.log('✅ Aplicación instalada');
+                  } else {
+                      console.log('❌ Instalación cancelada');
+                  }
+                  deferredPrompt = null;
+              });
+          });
+      });
+   </script>
 </body>
 </html>
