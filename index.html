@@ -24,6 +24,33 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="login.html">Inicia sesiòn</a></li>
    </ul>
+   <button id="btnInstall" hidden>Instalar app</button>
+
+<script>
+  let deferredPrompt;
+  const btnInstall = document.getElementById("btnInstall");
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    // Evita que Chrome muestre el prompt automáticamente
+    e.preventDefault();
+    deferredPrompt = e;
+    btnInstall.hidden = false;
+  });
+
+  btnInstall.addEventListener("click", () => {
+    btnInstall.hidden = true;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("El usuario aceptó instalar");
+      } else {
+        console.log("El usuario canceló la instalación");
+      }
+      deferredPrompt = null;
+    });
+  });
+</script>
+
 
    <!-- Registrar el Service Worker-->
     <script>
