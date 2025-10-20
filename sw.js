@@ -7,6 +7,8 @@ const urlsToCache = [
     `${BASE_PATH}index.html`,
     `${BASE_PATH}login.html`,
     `${BASE_PATH}manifest.json`,
+    `${BASE_PATH}style.css`,
+    `${BASE_PATH}app.js`,
     
 ];
 
