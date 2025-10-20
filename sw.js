@@ -9,7 +9,7 @@ const urlsToCache = [
     `${BASE_PATH}manifest.json`,
     `${BASE_PATH}style.css`,
     `${BASE_PATH}app.js`,
-    `${BASE_PATH}offline.html`,
+    `${BASE_PATH}offline.html`, 
     `${BASE_PATH}icons/icon-192x192.png`,
     `${BASE_PATH}icons/icon-512x512.png`,
 ];
