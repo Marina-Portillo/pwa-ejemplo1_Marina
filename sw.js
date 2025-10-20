@@ -1,7 +1,7 @@
 
 //1. Nombgre del sw y los archivos a cachear
 
-const CACHE_NAME = "mi-cache2";
+const CACHE_NAME = "mi-cache";
 const BASE_PATH = "/pwa-ejemplo1_Marina/";
 const urlsToCache = [
     `${BASE_PATH}index.html`,
